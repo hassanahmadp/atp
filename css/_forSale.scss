@@ -1,0 +1,88 @@
+#forSale {
+  padding: 6rem 0;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  main.cont {
+    margin: 3rem auto;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-family: "crim-semibold";
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
+.saleItem {
+  margin: 4rem 0;
+  padding: 0 10%;
+  @include flex(space-between, center);
+  flex-wrap: wrap;
+  &__text {
+    flex: 1 1 20rem;
+  }
+
+  &__img {
+    // box-shadow: 0 0 1rem rgb(172, 172, 172);
+    margin: auto;
+    flex: 1 1 20rem;
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+    height: 20rem;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+
+    button {
+      font-size: 2rem;
+      color: white;
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      top: 0;
+      left: 0;
+      i {
+        pointer-events: none;
+      }
+      // background: red;
+    }
+
+    button.next {
+      right: 0;
+      left: auto;
+    }
+
+    button.prev {
+      display: none;
+    }
+  }
+  .mainInfo {
+    margin-right: 2rem;
+  }
+
+  // &__text {
+
+  // }
+  &__info {
+    margin: 0 0 1rem;
+    @include flex(space-between, center);
+  }
+}
+
+@media (max-width: 799px) {
+  .saleItem {
+    .mainInfo {
+      margin: 0;
+    }
+  }
+}

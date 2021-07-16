@@ -1,0 +1,135 @@
+header {
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: auto;
+
+  a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    transition: 0.2s ease;
+    &:hover {
+      border-bottom: 0px solid black;
+    }
+  }
+
+  main {
+    height: 100%;
+    @include flex(space-between, center);
+  }
+
+  .logo {
+    height: 3.2rem;
+  }
+
+  .active_menu {
+    @include flex(space-between, center);
+    li {
+      height: auto;
+      margin: 1rem;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.burger,
+.cross {
+  position: relative;
+  top: 0.5rem;
+  height: 2.5rem;
+  width: 2.7rem;
+  @include flex(space-around, center);
+  flex-direction: column;
+  .line {
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 20px;
+  }
+  display: none;
+}
+
+.fake_menu {
+  padding-top: 4rem;
+  position: fixed;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  height: 60vh;
+  min-height: 30rem;
+  width: 100vw;
+  z-index: 10;
+  ul {
+    @include flex(space-around, center);
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+  li {
+    padding-bottom: 10px;
+  }
+}
+
+.cross {
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  @include flex(space-around, center);
+  flex-direction: column;
+  .line {
+    position: relative;
+  }
+
+  .l1 {
+    transform: rotate(45deg);
+    top: 0.85rem;
+  }
+
+  .l2 {
+    opacity: 0;
+  }
+
+  .l3 {
+    bottom: 0.85rem;
+    transform: rotate(-45deg);
+  }
+}
+
+.inActive {
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-100%);
+}
+
+@media (max-width: 810px) {
+  .burger {
+    display: flex;
+  }
+
+  header {
+    .active_menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .burger {
+    transform: scale(0.8);
+    top: 0;
+  }
+
+  header {
+    .logo {
+      height: 2rem;
+    }
+  }
+}

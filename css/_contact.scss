@@ -1,0 +1,56 @@
+#contact {
+  padding: 10rem 0;
+  h3 {
+    font-family: "crim-semibold";
+    font-size: 1.5rem;
+  }
+
+  a {
+    text-decoration: underline;
+    color: black;
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    &:hover {
+      text-decoration: none;
+      border-bottom: 0px solid black;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+  }
+  .contactInfo {
+    padding: 0 1.5rem;
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+
+    &__text {
+      flex: 1 1 20rem;
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    &__maps {
+      flex: 100 1 25rem;
+      width: 35rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #contact {
+    .contactInfo {
+      flex-wrap: wrap;
+      &__maps {
+        margin-top: 3rem;
+        min-height: 35rem;
+      }
+    }
+  }
+}
